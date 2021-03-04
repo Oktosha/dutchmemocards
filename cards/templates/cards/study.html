@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>DutchMemoCards study</title>
+  </head>
+  <body>
+    {{ cards|json_script:"cards-data" }}
+    <div id="root" />
+    <script>
+      const data = JSON.parse(document.getElementById("cards-data").innerHTML);
+      for (item of data) {
+        console.log(item);
+      }
+    </script>
+  </body>
+</html>
