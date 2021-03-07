@@ -20,7 +20,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - run: |
-          shopt -s globstar && pylint --load-plugins pylint_django --django-settings-module=dutchmemocards.settings **/*.py
+          pylint cards dutchmemocards
   black:
     runs-on: ubuntu-20.04
     steps:
@@ -36,4 +36,4 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
       - run: |
-          shopt -s globstar && black --check --verbose **/*.py
+          black --check --verbose .

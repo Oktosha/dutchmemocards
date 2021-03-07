@@ -1,0 +1,20 @@
+[tool.black]
+line-length = "88"
+target-version = ['py38']
+include = '\.py?$'
+exclude = '.*/migrations/.*'
+
+[tool.pylint."MESSAGES CONTROL"]
+# clashes with black https://black.readthedocs.io/en/stable/compatible_configs.html#pylint
+disable = """
+  C0330,
+  C0326
+"""
+
+[tool.pylint."MASTER"]
+ignore = "migrations"
+load-plugins = "pylint_django"
+django-settings-module = "dutchmemocards.settings"
+
+[tool.pylint.FORMAT]
+max-line-length = "88"

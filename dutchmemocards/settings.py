@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    "cards",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -86,6 +87,7 @@ DATABASES = {
 
 AUTH_PASSWORD_VALIDATORS = [
     {
+        # pylint: disable=line-too-long
         "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",
     },
     {
